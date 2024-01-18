@@ -5,7 +5,6 @@ class Node
   constructor(data, next) {
     this.data = data
     this.next = null
-    
   }
   
 }
@@ -17,7 +16,11 @@ class LinkedList
     this.head = head;
   }
 
-  size ()
+  insert ()
+  {
+    
+  }
+  size()
   {
     let count = 0;
     let node = this.head;
