@@ -9,31 +9,69 @@ class Node
   
 }
 
-class LinkedList
-{
-  constructor ( head = null )
-  {
-    this.head = head;
-  }
+class LinkedList {
+	constructor(head = null) {
+		this.head = head;
+	}
 
-  insert ()
+	insert(data) {
+		let newNode = new Node(data);
+		this.head = newNode;
+	}
+
+	size() {
+		let count = 0;
+		let node = this.head;
+
+		while (node) {
+			count++;
+			node = node.next;
+		}
+		return count;
+	}
+
+	getFirst() {
+		return this.head;
+	}
+
+	getLast() {
+		let node = this.head;
+		if (!this.head) {
+			return null;
+		}
+		while (node.next) {
+			node = node.next;
+		}
+		return node;
+	}
+  isEmpty()
   {
-    
-  }
-  size()
-  {
-    let count = 0;
-    let node = this.head;
-    
+    let count = 0
+    let node = this.head
+
     while ( node )
     {
-      count++;
-      node = node.next;
+      count++
+      node = node.next
     }
-    return count;
+    if (count !== 0) {
+      return false
+    }
+    return true
   }
-}
+	search(key) {
+    let currentNode = this.head;
+    
+		while (currentNode !== null && currentNode.data !== key) {
+			currentNode = currentNode.next;
+		}
+		return currentNode;
+	}
 
+	clear() {
+		this.head = null;
+	}
+}
 let previousNode = new Node( 11 );
 let numList = new LinkedList( previousNode );
 
